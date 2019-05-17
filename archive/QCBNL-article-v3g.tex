@@ -1,0 +1,658 @@
+%\documentclass[letterpaper,english,reprint,nofootinbib,aps,superscriptaddress,showpacs,showkeys]{revtex4-1}
+\documentclass[prl,letterpaper,english,reprint,nofootinbib,aps,superscriptaddress,showpacs,showkeys]{revtex4-1}
+
+\usepackage{babel,calc,amsmath,amsthm,amssymb,graphicx,subfigure,xcolor,comment}
+\usepackage{mathdots}
+%\usepackage[notref,notcite,color]{showkeys}
+\usepackage[T1]{fontenc}
+\setcounter{secnumdepth}{3}
+\usepackage[unicode=true]{hyperref}
+\usepackage{booktabs}
+\usepackage{threeparttable}
+\usepackage{braket}
+\usepackage{multirow}
+
+\usepackage[normalem]{ulem}
+\hypersetup{
+     colorlinks=true,       		% false: boxed links; true: colored links
+     linkcolor=blue,          	% color of internal links
+     citecolor=red,             % color of links to bibliography
+    % filecolor=blue,      		% color of file links
+     urlcolor=magenta,          % color of external links
+    % runcolor=cyan
+ }
+%% THEOREMS -------------------------------------------------------
+\newtheorem{theorem}{Theorem}
+\newtheorem*{theorem*}{Theorem}
+\newtheorem{corollary}{Corollary}
+\newtheorem*{corollary*}{Corollary}
+\newtheorem{lemma}{Lemma}
+\newtheorem*{lemma*}{Lemma}
+\newtheorem{proposition}{Proposition}
+\newtheorem*{proposition*}{Proposition}
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}
+\newtheorem*{definition*}{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}{Remark}
+\newtheorem*{remark*}{Remark}
+%% MATH -----------------------------------------------------------
+\newcommand{\norm}[1]{\left\Vert#1\right\Vert}
+\newcommand{\abs}[1]{\left\vert#1\right\vert}
+
+\newcommand{\Real}{\mathbb R}
+\newcommand{\eps}{\varepsilon}
+\newcommand{\To}{\longrightarrow}
+\newcommand{\BX}{\mathbf{B}(X)}
+\newcommand{\A}{\mathcal{A}}
+%% ----------------------------------------------------------------
+
+\newcommand{\tr}{\rm tr}
+\newcommand{\rom}[1]{\MakeUppercase{\romannumeral #1}}
+
+
+\begin{document}
+\renewcommand{\figurename}{Fig.}
+
+\title{Experimental Demonstration of Quantum Contextuality beyond Bell Nonlocality}
+
+
+\author{Zheng-Hao Liu}
+\affiliation{CAS Key Laboratory of Quantum Information, University of Science and Technology of China, Hefei 230026, People's Republic of China}
+\affiliation{Synergetic Innovation Center of Quantum Information and Quantum Physics, University of Science and Technology of China, Hefei 230026, People's Republic of China}
+
+\author{Hui-Xian Meng}
+\affiliation{Theoretical Physics Division, Chern Institute of Mathematics, Nankai University, Tianjin 300071, People's Republic of China}
+
+\author{Zhen-Peng Xu}
+\affiliation{Naturwissenschaftlich-Technische Fakult\"{a}t, Universit\"{a}t Siegen, Walter-Flex-Stra{\ss}e 3, 57068 Siegen, Germany}
+
+\author{Jie Zhou}
+\affiliation{Theoretical Physics Division, Chern Institute of Mathematics, Nankai University, Tianjin 300071, People's Republic of China}
+
+\author{Sheng Ye}
+\affiliation{CAS Key Laboratory of Quantum Information, University of Science and Technology of China, Hefei 230026, People's Republic of China}
+\affiliation{Synergetic Innovation Center of Quantum Information and Quantum Physics, University of Science and Technology of China, Hefei 230026, People's Republic of China}
+
+\author{Qiang Li}
+\affiliation{CAS Key Laboratory of Quantum Information, University of Science and Technology of China, Hefei 230026, People's Republic of China}
+\affiliation{Synergetic Innovation Center of Quantum Information and Quantum Physics, University of Science and Technology of China, Hefei 230026, People's Republic of China}
+
+\author{Kai Sun}
+\affiliation{CAS Key Laboratory of Quantum Information, University of Science and Technology of China, Hefei 230026, People's Republic of China}
+\affiliation{Synergetic Innovation Center of Quantum Information and Quantum Physics, University of Science and Technology of China, Hefei 230026, People's Republic of China}
+
+\author{Hong-Yi Su}
+\affiliation{Graduate School of China Academy of Engineering Physics, Beijing 100193, People's Republic of China}
+
+\author{Ad\'{a}n Cabello}
+\affiliation{Departamento de Fsica Aplicada II, Universidad de Sevilla, E-41012 Sevilla, Spain}
+
+\author{Jing-Ling Chen}
+\email{chenjl@nankai.edu.cn}
+\affiliation{Theoretical Physics Division, Chern Institute of Mathematics, Nankai University, Tianjin 300071, People's Republic of China}
+
+\author{Jin-Shi Xu}
+\email{jsxu@ustc.edu.cn}
+\affiliation{CAS Key Laboratory of Quantum Information, University of Science and Technology of China, Hefei 230026, People's Republic of China}
+\affiliation{Synergetic Innovation Center of Quantum Information and Quantum Physics, University of Science and Technology of China, Hefei 230026, People's Republic of China}
+
+\author{Chuan-Feng Li}
+\email{cfli@ustc.edu.cn}
+\affiliation{CAS Key Laboratory of Quantum Information, University of Science and Technology of China, Hefei 230026, People's Republic of China}
+\affiliation{Synergetic Innovation Center of Quantum Information and Quantum Physics, University of Science and Technology of China, Hefei 230026, People's Republic of China}
+
+\author{Guang-Can Guo}
+\affiliation{CAS Key Laboratory of Quantum Information, University of Science and Technology of China, Hefei 230026, People's Republic of China}
+\affiliation{Synergetic Innovation Center of Quantum Information and Quantum Physics, University of Science and Technology of China, Hefei 230026, People's Republic of China}
+
+\date{\today}
+
+\begin{abstract}
+In this work, we compare Bell nonlocality and quantum contextuality, two intrinsic properties of Nature, by using Bell's inequality and the noncontextuality inequality that correspond to the same exclusivity graph via the Cabello-Severini-Winter graph-theoretical approach. It is found that the maximum quantum violation of the noncontextuality inequality is in general larger than that of Bell's inequality. In particular, we consider the graph that leads to $I_{3322}$-type inequalities, and find in this case that the maximum quantum violation of Bell's inequality is around $6.251$, the maximum quantum violation of the noncontextuality is around $6.588$ for a five-dimensional system and $6.571$ for a four-dimensional system, respectively, thus yielding a gap $\Delta\approx0.30$. We give the first experimental demonstration of the gap. The results will further deepen the understanding of different types of quantum correlations.
+\end{abstract}
+
+
+
+
+\pacs{03.65.Ud, 03.67.Mn, 42.50.Xa}
+
+\maketitle
+
+
+%Nonclassicality is an inherited feature that distinguishes quantum mechanics (QM) from classical theory. Among the well-known nonclassicalities, there are quantum entanglement~\cite{Horodecki}, Bell nonlocality (BN)~\cite{Bell66}, quantum contextuality (QC)~\cite{KS67} and so on.
+\emph{Introduction.}---A physical system exhibits Bell nonlocality (BN) if the outcomes of ideal measurements (i.e., those that yield the same outcome when repeated and do not disturb compatible measurements) cannot be reproduced by noncontextual-hidden variable (NCHV) models, in which measurement outcomes are independent of space-like separated measurements performing on the subsystems~\cite{Bell66}. In a similar sense, a physical theory exhibits quantum contextuality (QC) if its measurement outcomes cannot be reproduced by noncontextual-hidden-variable (NCHV) models, in which measurement outcomes are independent of the measurement contexts (i.e., the set of jointly measurable observables that are actually measured)~\cite{KS67}. Both LHV and NCHV models are usually referred to as classical models, as they, and their respective breakdowns in quantum theory, do share several similarities~\cite{Mermin}.
+%Bell nonlocality and quantum contextuality are two intrinsic properties of Nature. They are different concepts but closely related:
+For instance, (i) both BN and QC reflect the confliction between quantum mechanics and some deterministic theories, in which measurement outcomes are well defined even before measurements are performed.
+%The former refutes the LHV models, while the latter refutes the NCHV models.
+%Kochen and Specker \cite{Specker60, KS67} (Bell \cite{Bell66}) already ruled out NCHV (LHV) models from quantum theory (QT).
+(ii) Every Bell's inequality becomes a noncontextuality inequality if the constraint of space-like separation between measurements on distant subsystems is removed and replaced by the requirement that measurements are ideal \cite{Mermin,RDLTC14}.
+Recently, BN and QC have found many applications, e.g., in speeding-up quantum algorithms \cite{Howard}, fault-tolerant computation \cite{Raussendorf13}, quantum key distribution \cite{Ekert91}, reduction of communication complexity \cite{BCMW10}, and randomness certification \cite{PAMBMMOHLMM10}.
+
+General fundamental relations between these two quantum correlations have also been studied in the literature. For instance, a fundamental monogamy relation exists between QC and BN. The theoretical result was first presented in~\cite{Kurzynski}, and observed later in experiment~\cite{Li}. Second, via the Cabello-Severini-Winter (CSW) graph-theoretical approach~\cite{CSW14}, BN is proved to be tightly bounded by QC.
+The CSW approach enables us to compare BN and QC in a same \emph{exclusivity} graph~\cite{definition}.
+
+
+Given any Bell scenario, the set of behaviors allowed by quantum theory is a subset of the so-called theta body of the graph of exclusivity $G$ of the events of that Bell scenario \cite{CSW14}.
+The theta body of $G$, denoted $\mathcal{G}$, is a well-studied convex set in graph theory \cite{GLS88,GLS86,Knuth94}.
+Using Dirac's notation, it is defined as
+%\begin{equation} \label{thb}
+%\begin{split}
+%\mathcal{G} = \{ \vec{p}(G) \in [0,1]^{|V(G)|} : p_i = |\langle x^{(i)}_{a_i} \psi | \psi \rangle|^2,\; |\langle \psi| \psi \rangle| = 1,\\
+%|\langle x^{(i)}_{a_i}\psi | x^{(i)}_{a_i}\psi \rangle| = 1,\langle x^{(i)}_{a_i}\psi | x^{(j)}_{a_j}\psi \rangle = 0,\;\forall (i,j) \in E(G) \}.
+%\end{split}
+%\end{equation}
+\begin{eqnarray*} \label{thb}
+&\mathcal{G} = \{ \vec{p}(G) \in [0,1]^{|V(G)|} : p_i = |\langle x^{(i)}_{a_i} \psi | \psi \rangle|^2,\; |\langle \psi| \psi \rangle| = 1,\\
+&|\langle x^{(i)}_{a_i}\psi | x^{(i)}_{a_i}\psi \rangle| = 1,\langle x^{(i)}_{a_i}\psi | x^{(j)}_{a_j}\psi \rangle = 0,\;\forall (i,j) \in E(G) \},
+\end{eqnarray*}
+where $E(G)$ denotes the set of edges of $G$. That is, $\mathcal{G}$ contains the behaviors that satisfy:
+\begin{itemize}
+ \item[(I)] The initial state of the system can be associated to a vector with unit norm $| \psi \rangle$ in a vector space ${\mathcal V}$ with an inner product.
+ \item[(II)] The state of the system after performing a measurement $x^{(i)}$ with outcome $a_i$ can be associated to a vector with unit norm $ | x^{(i)}_{a_i}\psi \rangle$ in ${\mathcal V}$. Post-measurement states corresponding to mutually exclusive events are associated to mutually orthogonal vectors.
+ \item[(III)] The probability of the event $(x^{(i)}_{a_i} \psi | \psi)$ can be obtained as $|\langle x^{(i)}_{a_i} \psi | \psi \rangle|^2$.
+\end{itemize}
+The constrains of the Bell scenario typically impede certain behaviors within the theta body of $G$. Interestingly, as noticed in Ref.\ \cite{CSW14}, any behavior within the theta body of $G$ can be achieved in a Kochen-Specker contextuality scenario in which the compatibility graph is isomorphic to $G$.
+
+In this work, we experimentally test this idea by considering a subgraph of the exclusivity graph of the $(2,3,2)$ Bell scenario corresponding to the $I_{3322}$ Bell inequality and showing that using a four-dimensional quantum system and a set of measurements, whose compatibility graph is isomorphic to $G$, we can experimentally observe a behavior that is forbidden in the $(2,3,2)$ Bell scenario.
+%The purpose of this Letter is to demonstrate QC beyond BN experimentally.
+For a given graph, let $\Delta$ denote the different quantum predictions between QC and BN.
+%, then $\Delta=0$ means BN saturates QC, and $\Delta>0$ means QC is beyond BN.
+So far, despite a few theoretical examples~\cite{RDLTC14,SBBC13}, there has been no experimental report on a nonzero $\Delta$.
+%The idea is to select an exclusivity graph that has a sufficiently large $\Delta$ to make the experimental observation of QC beyond BN accessible.
+Here, we consider the exclusivity graph that yields the $I_{3322}$ inequality, which gives $\Delta\approx0.3$~\cite{RDLTC14}. Within experimental errors, the experimental results are in agreement with the theoretical predictions.
+
+%A natural question is whether quantum contextuality may go {\em beyond} quantum nonlocality in some sense.
+%One possible sense occurs within the Cabello-Severini-Winter (CSW) graph-theoretic approach to quantum contextuality \cite{CSW10,CSW14}.
+%Where, corresponding to every NC or Bell inequality, there is a graph $G$ encoding the relationships of exclusivity between the events in that inequality.
+%Reciprocally, given any arbitrary graph $G$, there is always a quantum system and a NC or Bell inequality with exclusivity graph $G$. The interesting thing is that the maximum NC violation is always given by a characteristic number of $G$: the Lov\'asz number of $G$. Then, does there exist a pair of NC and Bell inequalities represented by the same exclusivity graph, with the former one giving higher quantum violation?
+%
+%CSW already showed that the answer is positive.
+%Among these cases, the $I_{3322}^{\rm CSW}\le 6$ inequality \cite{CSW10} is considered as the most interesting one. Its maximal violation is 6.58841287 for quantum contextuality, strictly higher than 6.25087538 for Bell nonlocality~\cite{Pal10}.
+%The same behaviour was later observed for all bipartite Bell inequalities whose exclusivity graph is a pentagon \cite{SBBC13}. However, this case is less interesting since, unlike $I_{3322}$, these pentagonal Bell inequalities are not tight (i.e., they do not define the border that separate between local and nonlocal correlations).
+%The $I_3\le 2$ inequality is another inequality exhibiting quantum contextuality beyond Bell nonlocality, and for Bell nonlocality it also defines a tight bound. However,
+%the difference of maximal violation for quantum contextuality and Bell nonlocality is 0.0133, which is too small to be observed in experiment.
+%
+%In this Letter, we investigate the quantum contextuality and Bell nonlocality of inequality $I_{3322}^{\rm CSW}\le 6$ in four-dimensional system and two-qubits system respectively. We show that these systems are adequate for proving the phenomenon of quantum contextuality beyond Bell nonlocality, and give an experimental demonstration.
+%
+
+%Applying the (CSW) graph-theoretic approach, the $I_{3322}\le 0$ inequality proposed symmetrically in Ref.~\cite{BG08} can be rewritten as~\cite{RDLTC14}
+
+\emph{Theory: QC beyond BN.}---Let us start from the symmetric Bell inequality  $I_{3322}\le 0$~\cite{BG08}, which is a natural generalization of the Clauser-Horne-Shimony-Holt inequality~\cite{CHSH} from two measurement settings to three measurement settings.
+The Bell inequality can be written in the following form~\cite{RDLTC14} (see also~\cite{SM})
+ \begin{eqnarray}
+ I_{3322}^{\rm CSW}
+ &=&P(0,0 \vert 0,1) + P(0,0 \vert 0,2) + P(0,0 \vert 1,0) \nonumber\\
+ &&+ P(0,0 \vert 1,2) + P(0,0 \vert 2,0) + P(0,0 \vert 2,1) \nonumber \\
+ &&+ P(0,1 \vert 1,1) + P(1,0 \vert 1,1) + P(1,1 \vert 1,1) \nonumber\\
+ &&+ P(0,1 \vert 2,2) + P(1,0 \vert 2,2) + P(1,1 \vert 2,2) \nonumber \\
+ &&+ P(1,\_ \vert 0,\_) +P(1,\_ \vert 1,\_)\nonumber \\
+ &&  + P(\_,1 \vert \_,0)+ P(\_,1 \vert \_,1)\stackrel{\mbox{\tiny{LHV}}}{\leq}6,
+\label{I3322BL}
+\end{eqnarray}
+where $P(m,n|i,j)\equiv P(a_i=m, b_j=n)$ denotes the probability in which Alice's $i$-th measurement outcome is $m$ and Bob's $j$-th measurement outcome is $n$, $P(m,\_|i,\_)\equiv P(a_i=m)$ denotes the marginal probability of Alice's $i$-th measurement result being $m$, and similarly for $P(\_,n|\_,j)$. Inequality (\ref{I3322BL}) holds for any two $d$-dimensional systems (i.e., two qudits). For two qubits, it is a tight inequality, with the maximal quantum violation equal to $I_{3322}^{\rm BN}=25/4=6.25$. The optimal observables and quantum state are given in~\cite{SM}. It was shown in general that the maximal quantum violation reaches $I_{3322}^{\rm BN}\approx6.25087538$ for infinite dimensions~\cite{Pal10}.
+ %(i.e., $d\rightarrow\infty$)~\cite{Pal10}.
+%In other words, for the $I_{3322}$ inequality, Bell nonlocality is $I_{3322}^{\rm BN}\le 6.251$.
+
+
+
+\begin{figure}[t]
+\centering
+\includegraphics[scale=0.6]{i3322.pdf}
+\caption{\label{Fig7}Exclusivity graph associated with $I_{3322}^{\rm CSW}$.
+The 16 probability events are:
+ 1: $1,1|2,2$,
+ 2: $0,0|2,0$,
+ 3: $1,0|2,2$,
+ 4: $0,0|2,1$,
+ 5: $0,1|2,2$,
+ 6: $\_,1|\_,0$,
+ 7: $\_,1|\_,1$,
+ 8: $0,0|1,0$,
+ 9: $1,0|1,1$,
+10: $0,1|1,1$,
+11: $1,\_|1,\_$,
+12: $0,0|1,2$,
+13: $1,1|1,1$,
+14: $0,0|0,1$,
+15: $1,\_|0,\_$, and
+16: $0,0|0,2$.
+%The 16 vertices represent the corresponding vectors.
+}
+\end{figure}
+
+
+An exclusivity graph $G$ can be associated with $I_{3322}^{\rm CSW}$ as shown in Fig.~\ref{Fig7} (see also Ref.~\cite{RDLTC14}).
+The vertices of graph $G$ represent probability events, and two connected vertices imply two events that are exclusive with one another.
+ %(i.e., the two corresponding projectors are mutually orthogonal).
+ Apparently, space-like measurements guarantee the mutual orthogonality.
+The noncontextuality inequality, based on the graph in Fig.~\ref{Fig7} and theorem 1 in Ref.~\cite{cabello16}, reads
+\begin{align}
+I_{3322}^{\rm CSW}
+&=\sum_{i\in V}P_{|\psi\rangle}(A_i=1)-\sum_{(i,j)\in E}P_{|\psi\rangle}(A_i=1,A_j=1)\nonumber\\
+&\overset{{\rm{NCHV}}}\leq \beta \;\;\overset{{\rm{QM}}}\leq \vartheta(G),
+\label{I3322QC}
+\end{align}
+where $V$ and $E$, respectively, denote the vertex and edge sets of the graph $G$,
+$P_{|\psi\rangle}(A_i=1)$ denotes the probability of obtaining result 1 when the observable $|A_i\rangle\langle A_i|$ is measured on $|\psi\rangle $ (i.e., $P_{|\psi\rangle}(A_i=1)= |\langle \psi|A_i\rangle|^2$), and $P_{|\psi\rangle}(A_i=1,A_j=1)\equiv P_{|\psi\rangle}(A_i=1)P_{|A_i\rangle}(A_j=1)$ represents experimental imprecision of $|A_i\rangle\bot |A_j\rangle$ when they are measured successively.
+Introducing the second term in (\ref{I3322QC}) is crucial and necessary, as it is used to evaluate the compatibility requirement in any contextuality test in a practical experiment~\cite{cabello16}. Certainly, the second term becomes zero in the ideal case and can thus be neglected.
+
+In Ref.~\cite{RDLTC14}, the authors have obtained the classical bound of inequality (\ref{I3322QC}) as $\beta=6$, and the maximal quantum violation as $I_{3322}^{\rm QC}=\vartheta(G)\approx 6.58841287$, with $\vartheta(G)$ being the Lov\'asz number~\cite{Lovasz} of $G$. Obviously, the gap $\Delta=I_{3322}^{\rm QC}-I_{3322}^{\rm BN}\approx 0.337$ is sufficient large, and so the $I_{3322}$
+inequality is a very good candidate to experimentally demonstrate QC beyond BN.
+%\emph{Remark 1}---
+In \cite{SM} (see Table I), we show that the above $\vartheta(G)$ can be achieved in a five-dimensional system, which was not been given in~\cite{RDLTC14}. We also compute the corresponding optimal measurement settings and optimal state to get $\vartheta(G)$.
+
+ \begin{figure*}[t]
+    \centering
+    \includegraphics[width=160mm]{fig/exp-sch-draft-v2.pdf}
+    \caption{(color online). Experimental setup.
+    (a.) The two-particle setup to check Bell nonlocality. Two maximally polarization-entangled photons were separately sent to Alice and Bob, going through their polarization discrimination system and recorded by single-photon avalanche detectors (SPAD).
+    (b.) The single photon source, prepared by exciting an intrinsic defect in a bulk GaN sample. The second-order photon correlation function at zero delay without background correction was 0.225, clearly exhibiting the signature of photon antibunching and confirmed the character of single-photon emission. Single photons were further filtered by a band-pass filter with a central wavelength of 780 nm and a bandwidth of 25 nm, and sent to the contextuality test setup.
+    (c.) The single-body contextuality test setup.
+    %Single photons filtered by a single mode optical fiber (SMF) were sent to the setup.     The polarization of single photon was prepared by a half-wave plate (HWP) and a polarization beam splitter (PBS).
+    The single photons from (b), after passing through the beam expanding system with two lenses and a pinhole between them, were sent to a spatial light modulator (SLM) controlled by a computer to prepared the high-dimensional states, which is denoted by an violet box. The measurement setup consists of another SLM and single mode fiber (SMF), and the counting apparatus here was a superconducting nanowire single-photon detector (SNSPD).}
+    \label{fig:exp-sch}
+ \end{figure*}
+
+
+
+In the present experiment, we consider instead a four-dimensional system to demonstrate QC beyond BN. The maximal QC value equals $I_{3322}^{\rm QC}\approx6.57152$, which is slightly smaller than the Lov\'asz number $\vartheta(G)$. The optimal settings (i.e., $|A_i\rangle, i=1,2,...,16$) and the state ($|\psi\rangle$) are given in \cite{SM} (see Table IV), and in this case, the gap $\Delta\approx 0.320$.
+%Since the quantum system we utilize in experiment is four-dimensional, we need to extend the graph
+Crucially, the graph $G$ needs to be extended with extra projectors that complete the full sets of compatible observables, in order that every projector is measured as part of a complete basis \cite{yxiao17}. In the work, we make measurements in the following six complete bases: $\{|A_1\rangle,|A_2\rangle,|A_3\rangle,|A_{17}\rangle\}$,
+$\{|A_1\rangle,|A_4\rangle,|A_7\rangle,|A_{18}\rangle\}$, $\{|A_1\rangle,|A_{5}\rangle,|A_{16}\rangle,|A_{19}\rangle\}$,
+$\{|A_1\rangle,|A_{9}\rangle,|A_{12}\rangle,|A_{20}\rangle\}$, $\{|A_{6}\rangle,|A_{8}\rangle,|A_{21}\rangle,|A_{22}\rangle\}$, and $\{|A_{14}\rangle,|A_{15}\rangle,|A_{23}\rangle,|A_{24}\rangle\}$.
+%\begin{eqnarray}
+%\left\{
+%  \begin{array}{ll}
+%    \{|A_1\rangle,|A_2\rangle,|A_3\rangle,|A_{17}\rangle\},  \{|A_1\rangle,|A_4\rangle,|A_7\rangle,|A_{18}\rangle\},\\
+%\{|A_1\rangle,|A_{5}\rangle,|A_{16}\rangle,|A_{19}\rangle\},
+%\{|A_1\rangle,|A_{9}\rangle,|A_{12}\rangle,|A_{20}\rangle\},\ \ \ \\
+%\{|A_{6}\rangle,|A_{8}\rangle,|A_{21}\rangle,|A_{22}\rangle\},
+%\{|A_{14}\rangle,|A_{15}\rangle,|A_{23}\rangle,|A_{24}\rangle\},
+%\end{array}
+%\right.
+%\end{eqnarray}
+ Here  $|A_{21}\rangle$ and $|A_{23}\rangle$ are taken as $|A_{1}\rangle$, and $|A_{17}\rangle,|A_{18}\rangle,|A_{19}\rangle,|A_{20}\rangle,|A_{22}\rangle,|A_{24}\rangle$ are uniquely determined by the other three vectors of a complete basis.
+ % since the system we focus on is four-dimensional and the all incomplete bases have three pairwise orthogonal vectors.
+ Thus, the detection probability of each observable, say $|A_{2}\rangle\langle A_{2}|$, can be obtained as $P_{|\psi\rangle}(A_2=1)=
+{N_{|\psi\rangle}(A_2)}/[N_{|\psi\rangle}(A_1)+N_{|\psi\rangle}(A_2)+N_{|\psi\rangle}(A_3)+N_{|\psi\rangle}(A_{17})]$,
+%\begin{eqnarray}
+%\begin{split}
+%&P_{|\psi\rangle}(A_2=1)=\\
+%&\frac{N_{|\psi\rangle}(A_2)}
+%{N_{|\psi\rangle}(A_1)+N_{|\psi\rangle}(A_2)+N_{|\psi\rangle}(A_3)+N_{|\psi\rangle}(A_{17})},
+%\end{split}
+%\end{eqnarray}
+where $N_{|\psi\rangle}(A_i)$ is the number of counts of obtaining result 1 when $|A_{i}\rangle\langle A_{i}|$ is measured on the state $|\psi\rangle.$ Similarly for the measurements of the other observables.
+
+
+
+
+%\begin{table}[b]
+%\caption{Numerically optimal measurement settings and state for $I_{3322}^{\rm QC}\approx6.57152$  in the four-dimensional system.}
+%\label{numerica3}
+%%\centering
+%\begin{ruledtabular}
+%  \begin{tabular}{lccccc} %\hline \hline
+%$|A_i\rangle$ & $i_1$ & $i_2$ & $i_3$ & $i_4$  \\
+%\hline
+%$|A_1\rangle$ & $0$ & $0$ & $1$ & $0$  \\
+%$|A_2\rangle$  & $0.469723$ & $0.453743$ & $0$ & $0.757283$  \\
+%$|A_3\rangle$ & $0.746839$ & $0.253161$ & $0$ & $0.614931$  \\
+%$|A_4\rangle$  & $0$ & $0.924703$ & $0$ & $-0.38069$  \\
+%$|A_5\rangle$ & $0.253161$ & $0.746839$ & $0$ & $-0.614931$  \\
+%$|A_6\rangle$ & $0.249899$ & $0.754381$ & $0$ & $0.607009$  \\
+%$|A_7\rangle$ & $1$ & $0$ & $0$ & $0$  \\
+%$|A_8\rangle$  & $0.924703$ & $0$ & $0$ & $-0.38069$  \\
+%$|A_9\rangle$  & $0$ & $1$ & $0$ & $0$  \\
+%$|A_{10}\rangle$  & $1$ & $0$ & $0$ & $0$ \\
+%$|A_{11}\rangle$ & $0$ & $1$ & $0$ & $0$  \\
+%$|A_{12}\rangle$  & $0.924703$ & $0$ & $0$ & $0.38069$  \\
+%$|A_{13}\rangle$  & $0$ & $0$ & $1$ & $0$  \\
+%$|A_{14}\rangle$  & $0$ & $0.924703$ & $0$ & $0.38069$  \\
+%$|A_{15}\rangle$ & $0.754381$ & $0.249899$ & $0$ & $-0.607009$  \\
+%$|A_{16}\rangle$  & $0.453743$ & $0.469723$ & $0$ & $0.757283$  \\
+%\hline
+%$|\psi\rangle$ & $\frac{1}{\sqrt{2}}$ & $\frac{1}{\sqrt{2}}$ & $0$ & $0$\\
+% % \hline \hline
+%   \end{tabular}
+%\end{ruledtabular}
+%\end{table}
+
+
+ \emph{Experimental setup and results.---}We are now ready to experimentally test the two distinct quantum values of $I^{\rm CSW}_{3322}$, namely, $I_{3322}^{\rm BN}\leq6.251$ and $I_{3322}^{\rm QC}\leq6.571$ separately, to explicitly demonstrate quantum contextuality beyond Bell nonlocality. The experimental setup is illustrated in Fig.~\ref{fig:exp-sch}. We start from $I_{3322}^{\rm BN}$. Based on the maximally entangled state $\ket{\Phi^+}=(|00\rangle+|11\rangle)/\sqrt{2}$ of two photonic polarization qubits, we checked the maximal violation of inequality (\ref{I3322BL}).
+ A type-\rom{2} $\beta$-Barium borate ($\beta$-BBO) crystal was pumped by a frequency-doubled femtosecond laser to generate  polarization-entangled biphoton, which were further sent to Alice and Bob, where a polarization beam splitter (PBS), proceeded by a quarter waveplate (QWP) and a half waveplate (HWP), was utilized to construct a polarization discrimination system.
+ Two single-photon avalanche detectors (SPAD) recorded photon counting rate after the polarization discrimination system, and their coincidence counts was proportional to the probability of detecting two photons with a certain setting.
+
+
+
+ %In the two-dimensional case, the setting to acquire maximal possible violation with two maximally entangled qubits $\ket{\Phi^+}$ have been worked out. More precisely, these settings are listed in table~\ref{tab:set3}.
+For each set of measurement, the total photon count was about $8000$. Substituting the measurement result into (\ref{I3322BL}) gives a result of $I_{3322}^{BN}=6.165 \pm 0.012$. Here, the errors were calculated according to the Poisson distribution, more precisely, by simulating the values of each measurement quantity from Poisson distribution for 100 randomly groups of counting sets, and taking the standard deviation of the simulated results as error. The result surpasses prediction of any possible LHV model but, due to imperfections in experiment, falls sightly below the two-qubit bound $6.25$.
+
+
+ We now turn to the inspection of $I_{3322}^{\rm QC}$. In a four-dimensional space, the single-body quantum contextual violation of the inequality (\ref{I3322QC}) was checked.
+ To construct this synthetic space, we exploit the capability of the orbital angular momentum (OAM) of light. Unlike photon's polarazation which is a homomorphic of a two-state system, OAM ideally spans an infinite dimension space, and the eigenstates with lower winding numbers allow precise manipulation.
+ The manipulation of states was accomplished by modulating the phase of the photon's wavefunction.
+
+ By exciting an intrinsic defect in a bulk GaN sample, we obtained an ultrabright, photostable single-photon sources at room temperature~\cite{qli18}.
+ A band-pass filter with a central wavelength of 780 nm and a width of 25 nm was inserted to filter the fluorescence of the defects and match the operation wavelength of the contextuality test setup. The total photon counting rate post the filter was about $0.94M$cps.
+
+ The single photon was directed to the setup by a single-mode fiber (SMF), and spatial-filtered into fundamental Gaussian mode.
+ Using a spatial light modulator (SLM), a coordinate-related wavefunction, determined by holograms displayed on the SLM, was bestowed to photons.
+ The photons would then carry a wavefunction resembling superpositions of Laguerre-Gaussian modes $LG_p^l$ with OAM number of $l$~\cite{allen92} and be prepared to desired initial four-dimensional states $\ket{\psi}$, after being diffracted by the first SLM. The four eigenvectors are set to be $\ket{i_1} = \ket{1}, \ket{i_2} = \ket{3}, \ket{i_3} = \ket{-1}$, and $\ket{i_4} = \ket{-3}$.
+ A $4f$ system mapped the first and the second SLM at its input and output plane, with an aperture inserted at the focal plane to filter off the unwanted zero- and higher-order diffraction terms.
+ The second SLM converted specific basis $\ket{\alpha}$ back to $\ket{0}$, which was post-selected by a SMF, as photons carrying nonzero OAM cannot be focused to a spot and collected by a SMF.
+ In addition, a telescope lens was inserted between the second SLM and SMF to adjust beam size and optimize fiber coupling efficiency.
+ Photons were then sent to a superconducting nanowire single-photon detector (SNSPD), where the counting rate would be proportional to the probability of projection measurements, i.e., $\left|\braket{\alpha|\psi}\right|^2$.
+
+ The input state was prepared to be $\ket{\psi} = (\ket{i_1}+\ket{i_2})/\sqrt{2}$, and the 16 corresponding projectors $|A_j\rangle\langle A_j|\;(j=1,2,\cdots,16)$ were then measured on 6 sets of complete bases.
+ We further considered the experimental imperfections. Orthogonality of states represented by connected vertices in the exclusivity graph was tested, and their effects were subtracted, yielding the second term of $I_{3322}^{\rm QC}$.
+ The verification of inequality~(\ref{I3322QC}) also requires checking the no-signaling condition, that the local marginal probabilities of successive measurements to be irrelevant to the other settings, forward or backward in time, being chosen, as suggested in~\cite{cabello16}. See~\cite{SM} for detailed information of this test.
+
+ The first term of $I_{3322}^{QC}$ inequality was evaluated by directly referring to detect probabilities of the 16 corresponding projectors on $6$ full sets of compatible observables. In order to obtain all probabilities needed for the exclusivity graph, there were 19 independent projectors in total.
+ Measurement settings of these projectors were shown in~\cite{SM}.
+ The counting rate of each projector was then recorded and the detection probability was calculated. The integration time for each projection measurement was 10 seconds. 
+ The experimental result of the first term of $I_{3322}^{QC}$ was $6.548 \pm 0.020$, error estimated by assuming Poisson distribution.
+
+\iffalse
+
+\begin{table}[htbp]
+    \centering
+    \begin{tabular}{|c|cccc|} \hline \hline
+$\ket{i}$ & $i_1$ & $i_2$ & $i_3$ & $i_4$  \\
+\hline
+$\ket{1}, \ket{13}, \ket{21}, \ket{23}$ & $0$ & $0$ & $1$ & $0$  \\
+$|2\rangle$  & $0.469723$ & $0.453743$ & $0$ & $0.757283$  \\
+$|3\rangle$ & $0.746839$ & $0.253161$ & $0$ & $0.614931$  \\
+$|4\rangle$  & $0$ & $0.924703$ & $0$ & $-0.38069$  \\
+$|5\rangle$ & $0.253161$ & $0.746839$ & $0$ & $-0.614931$  \\
+$|6\rangle$ & $0.249899$ & $0.754381$ & $0$ & $0.607009$  \\
+$\ket{7}, \ket{10}$ & $1$ & $0$ & $0$ & $0$  \\
+$|8\rangle$  & $0.924703$ & $0$ & $0$ & $-0.38069$  \\
+$\ket{9}, \ket{11}$  & $0$ & $1$ & $0$ & $0$  \\
+$|12\rangle$  & $0.924703$ & $0$ & $0$ & $0.38069$  \\
+$|14\rangle$  & $0$ & $0.924703$ & $0$ & $0.38069$  \\
+$|15\rangle$ & $0.754381$ & $0.249899$ & $0$ & $-0.607009$  \\
+$|16\rangle$  & $0.453743$ & $0.469723$ & $0$ & $0.757283$  \\
+$\ket{17}$ & $0.470735$ & $-0.854416$ & $0$ & $-0.219958$ \\
+$\ket{18}$ & $0$ & $0.38069$ & $0$ & $0.924703$ \\
+$\ket{19}$ & $0.854416$ & $-0.470735$ & $0$ & $-0.219958$ \\
+$\ket{20}$ & $0.38069$ & $0$ & $0$ & $-0.924703$ \\
+$\ket{22}$ & $0.287185$ & $-0.656437$ & $0$ & $0.697578$ \\
+$\ket{24}$ & $0.656437$ & $-0.287185$ & $0$ & $0.697578$ \\
+\hline
+$|\psi\rangle$ & $1/\sqrt{2}$ & $1/\sqrt{2}$ & $0$ & $0$ \\
+  \hline \hline
+   \end{tabular}
+    \caption{Measurement settings for $I_{3322}^{QC}$ in four-dimensional systems to acquire maximal violation against NCHV models.}
+    \label{tab:set19}
+ \end{table}
+
+\fi
+
+ The second term of $I_{3322}^{\rm QC}$ inequality which represents experimental imperfections of orthogonality between states denoted by connected vertices in the exclusivity graph.
+ Similar as the way the first term was calculated, the second term was also evaluated by adding up mutual projection probabilities of the states mentioned above, and their fluctuation also estimated by Poisson distribution. The measurement result yields a value of $-0.060 \pm 0.005$ for the second term of~\ref{I3322QC}, without correcting background noise from SNSPD and stray light.
+
+ By adding the two terms together, the final result of quantum contextuality is $I_{3322}^{\rm QC}=6.488 \pm 0.025$, exceeding the classical bound by about 19 standard deviations and the Tsirelson bound derived from Bell nonlocality by over 9 standard deviations. We thus successfully observed the quantum contextuality beyond Bell nonlocality.
+
+ \emph{Conclusion.}---In conclusion, for a subgraph $G$ of the exclusivity graph of the Bell scenario, we have used a four-dimensional quantum system along with a set of measurements to experimentally demonstrate a behavior that is forbidden in the Bell scenario. Since any behavior within the theta body of $G$ can be achieved in a Kochen-Specker contextuality scenario in which the compatibility graph is isomorphic to $G$, what we have actually done is that we have compared Bell nonlocality and quantum contextuality by using the $I_{3322}$-type Bell's inequality and noncontextuality inequality, both of which correspond to the same exclusivity graph. QC has been investigated in  five- and four-dimensional systems, and we have found that the gap between QC and BN is around $0.3$. We have performed an experiment to demonstrate this gap. Within the experimental errors, the results are in very good agreement with the theoretical predictions.
+  %The inequality approach is a lucid method to describe the degree how contextual and nonlocal QT is. By virtue of graph theory, connections between quantum contextuality and graph's characteristic Lov\'asz number is established.
+% Following the CSW approach, we have investigated the exclusivity graph which gives $I_{3322}$ inequality.
+% By removing the constraints of Bell-type experiment, for the $I_{3322}$ case a remarkably high violation from any non-contextual hidden variable model exists, which cannot be explained by nonlocality per se, and has to be accounted for by quantum contextuality.
+% The key point lays under this result is that, although quantum contextuality is stated without spacelike restriction, and may be considered a more weakened property than Bell nonlocality, it actually gives stronger prediction in some sense.
+We suggest that our results indicate a deep-rooted connection between graph theory and nonclassical correlations. This may lead to a profound comprehension of quantum mechanics.
+
+
+%\begin{acknowledgments}
+ \textit{Acknowledgement}.---This work was supported by the National Key Research and Development Program of China (Grant No. 2016YFA0302700), the National Natural Science Foundation of China (Grants No. 61725504, 61327901, 61490711 and 11774335), the Key Research Program of Frontier Sciences, Chinese Academy of Sciences (CAS) (Grant No. QYZDY-SSW-SLH003), Anhui Initiative in Quantum Information Technologies (AHY060300 and AHY020100), the Fundamental Research Funds for the Central Universities (Grant No. WK2470000020 and WK2470000026). H.X.M. was supported by the Project funded by China Post-doctoral Science Foundation (No. 2018M631726). J.L.C. is supported by National Natural Science Foundations of China (Grant No.\ 11475089) and the Fundamental Research Funds for the Central Universities, Nankai University(Grant No.\ 63191507). The processing of GaN sample was partially carried out at the USTC Center for Micro and Nanoscale Research and Fabrication.
+
+ Z.H.L., H.X.M. and Z.P.X. contributed equally to this work.
+%\end{acknowledgments}
+
+
+
+\begin{thebibliography}{10}
+%	\providecommand{\url}[1]{\texttt{#1}}
+%	\providecommand{\urlprefix}{URL }
+%	\providecommand{\eprint}[2][]{\url{#2}}
+%\bibitem{Specker60}
+% E. P. Specker,
+% %Die Logik nicht gleichzeitig entscheidbarer Aussagen.
+% \href{http://onlinelibrary.wiley.com/doi/10.1111/j.1746-8361.1960.tb00422.x/abstract}{Dialectica \textbf{14}, 239 (1960).}
+
+% \bibitem{Horodecki}
+%R.~Horodecki, P.~Horodecki, M.~Horodecki, and K.~Horodecki,
+% \href{https://journals.aps.org/rmp/pdf/10.1103/RevModPhys.81.865}
+%%Quantum entanglement,
+% {Rev.~Mod.~Phys. \textbf{81}, 865 (2009).}
+
+
+\bibitem{Bell66}
+ J. S. Bell,
+ %On the problem of hidden variables in quantum mechanics.
+ \href{http://rmp.aps.org/abstract/RMP/v38/i3/p447_1}{Rev. Mod. Phys. \textbf{38}, 447 (1966).}
+
+
+\bibitem{KS67}
+ S. Kochen and E. P. Specker,
+ %The problem of hidden variables in quantum mechanics.
+ \href{http://www.iumj.indiana.edu/IUMJ/fulltext.php?year=1968&volume=17&artid=17004}{J. Math. Mech. \textbf{17}, 59 (1967).}
+
+
+\bibitem{Mermin}
+N. D. Mermin,
+%Simple Unified Form for the Major No-Hidden-Variables Theorems,
+\href{https://journals.aps.org/prl/pdf/10.1103/PhysRevLett.65.3373}
+{Phys. Rev. Lett. \textbf{65}, 3373 (1990).}
+
+\bibitem{RDLTC14}
+ R. Rabelo, C. Duarte, A. J. L\'opez-Tarrida, M. Terra Cunha, and A. Cabello,
+ %Multigraph approach to quantum nonlocality.
+ \href{https://iopscience.iop.org/article/10.1088/1751-8113/47/42/424021/meta}
+ {J. Phys. A: Math. Theor. \textbf{47}, 424021 (2014).}
+
+
+
+
+
+
+%\bibitem{Bell64}
+% J. S. Bell,
+% Physics \textbf{1}, 195 (1964).
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%\bibitem{KCBS08}
+% A. A. Klyachko, M. A. Can, S. Binicio\u{g}lu, and A. S. Shumovsky,
+% %Simple Test for Hidden Variables in Spin-1 Systems
+% \href{http://dx.doi.org/10.1103/PhysRevLett.101.020403}{Phys. Rev. Lett. \textbf{101}, 020403 (2008).}
+%
+%\bibitem{Cabello08}
+% A. Cabello,
+% %Experimentally Testable State-Independent Quantum Contextuality.
+% \href{http://dx.doi.org/10.1103/PhysRevLett.101.210401 }{Phys. Rev. Lett. \textbf{101}, 210401 (2008).}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\bibitem{Howard} M. Howard, J. Wallman, V. Veitch, and J. Emerson,
+\href{https://www.nature.com/articles/nature13460}
+{Nature (London) \textbf{510}, 351 (2014).}
+
+
+
+
+\bibitem{Raussendorf13}
+ R. Raussendorf,
+ %Contextuality in measurement-based quantum computation.
+ \href{http://link.aps.org/doi/10.1103/PhysRevA.88.022322}{Phys. Rev. A \textbf{88}, 022322 (2013).}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\bibitem{Ekert91}
+ A. K. Ekert,
+ %Quantum cryptography based on Bell's theorem.
+ \href{http://journals.aps.org/prl/abstract/10.1103/PhysRevLett.67.661}{Phys. Rev. Lett. \textbf{67}, 661 (1991).}
+
+%\bibitem{CDNS11}
+% A. Cabello, V. D'Ambrosio, E. Nagali, and F. Sciarrino,
+% %Hybrid ququart-encoded quantum cryptography protected by Kochen-Specker contextuality.
+% \href{http://journals.aps.org/pra/abstract/10.1103/PhysRevA.84.030302}{Phys. Rev. A \textbf{84}, 030302(R) (2011).}
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%\bibitem{BZPZ04}
+% \v{C}. Brukner, M. \.{Z}ukowski, J.-W. Pan, and A. Zeilinger,
+% %Bell's inequalities and quantum communication complexity.
+% \href{http://journals.aps.org/prl/abstract/10.1103/PhysRevLett.92.127901}{Phys. Rev. Lett. \textbf{92}, 127901 (2004).}
+
+\bibitem{BCMW10}
+ H. Buhrman, R. Cleve, S. Massar, and R. de Wolf,
+ %Nonlocality and communication complexity.
+ \href{http://journals.aps.org/rmp/abstract/10.1103/RevModPhys.82.665}{Rev. Mod. Phys. \textbf{82}, 665 (2010).}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\bibitem{PAMBMMOHLMM10}
+ S. Pironio, \emph{et al.},
+ %A. Ac\'{\i}n, S. Massar, A. Boyer de la Giroday,  D. N. Matsukevich, P. Maunz, S. Olmschenk, D. Hayes, L. Luo, T. A. Manning, and C. Monroe,
+ %Random numbers certified by Bell's theorem.
+ \href{http://www.nature.com/nature/journal/v464/n7291/full/nature09008.html}{Nature (London) \textbf{464}, 1021 (2010).}
+
+%\bibitem{UZZWYDDK13}
+% M. Um, X. Zhang, J. Zhang, Y. Wang, S. Yangchao, D.-L. Deng, L.-M. Duan, and K. Kim,
+% %Experimental certification of random numbers via quantum contextuality.
+% \href{http://www.nature.com/srep/2013/130409/srep01627/full/srep01627.html}{Sci. Rep. \textbf{3}, 1627 (2013).}
+
+ \bibitem{Kurzynski}
+P.~Kurzy${\rm \acute{n}}$ski, A.~Cabello, and D.~Kaszlikowski,
+ \href{https://journals.aps.org/prl/pdf/10.1103/PhysRevLett.112.100401}
+%Fundamental Monogamy Relation between Contextuality and Nonlocality,
+{Phys. Rev. Lett. \textbf{112}, 100401 (2014).}
+
+
+\bibitem{Li}
+T.~Li, X.~Zhang, Q.~Zeng, B.~Wang, and X.~D.~Zhang,
+%Experimental simulation of monogamy relation between contextuality and nonlocality in classical light,
+\href{https://www.osapublishing.org/DirectPDFAccess/75609127-9CAD-CE26-93F0FBF2C26787E3_385890/oe-26-9-11959.pdf?da=1&id=385890&seq=0&mobile=no}
+{Opt.~Express \textbf{26}, 9 (2018).}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%\bibitem{CSW10}
+% A. Cabello, S. Severini, and A. Winter,
+% %(Non-)Contextuality of physical theories as an axiom.
+% \href{http://arxiv.org/abs/1010.2163}{\eprint{arXiv:1010.2163}.}
+
+\bibitem{CSW14}
+ A. Cabello, S. Severini, and A. Winter,
+ %Graph-theoretic approach to quantum correlations
+ \href{http://journals.aps.org/prl/abstract/10.1103/PhysRevLett.112.040401}{Phys. Rev. Lett. \textbf{112}, 040401 (2014).}
+
+ \bibitem{definition}
+Two events are {\em mutually exclusive} if there is a measurement $M$ such that each event corresponds to a different outcome of $M$.
+The relations of exclusivity between events can be represented in a graph in which a vertex represents an event and an edge indicates mutual exclusivity. This graph is a {\em graph of exclusivity} \cite{CSW14}.
+The relations of compatibility between the measurements in a Bell or KS scenario $S$ can be represented in a graph in which a vertex represents a measurement and an edge indicates compatibility. This graph is called the {\em graph of compatibility} of $S$. A {\em context} in in a Bell or KS scenario is a subset of compatible and mutually nondisturbing measurements in $S$. Contexts correspond to cliques in the graph of compatibility of $S$. A clique is a set of vertices such that every two distinct vertices are adjacent.
+
+
+\bibitem{GLS86} M. Gr\"otschel, L. Lov\'asz, and A. Schrijver, Relaxations of vertex packing, \href{https://doi.org/10.1016/0095-8956(86)90087-0}{J. Combin. Theory B \textbf{40}, 330 (1986).}
+\bibitem{GLS88} M. Gr\"otschel, L. Lov\'asz, and A. Schrijver, {\em Geometric Algorithms and Combinatorial Optimization} (Springer, Berlin, 1988).
+
+\bibitem{Knuth94}
+D. E. Knuth,
+The sandwich theorem,
+\href{http://www.combinatorics.org/ojs/index.php/eljc/article/view/v1i1a1}{The Electronic Journal of Combinatorics No.\ 1, A1, 1 (1994).}
+
+
+ \bibitem{SBBC13}
+ M. Sadiq, P. Badzi{\c a}g, M. Bourennane, and A. Cabello,
+ %Bell inequalities for the simplest exclusivity graph.
+ \href{http://pra.aps.org/abstract/PRA/v87/i1/e012128}{Phys. Rev. A \textbf{87}, 012128 (2013).}
+
+ \bibitem{BG08}
+ N. Brunner and N. Gisin,
+ %Partial list of bipartite Bell inequalities with four binary settings.
+ \href{http://dx.doi.org/10.1016/j.physleta.2008.01.052}{Phys. Lett. A \textbf{372}, 3162 (2008).}
+
+
+ \bibitem{CHSH}
+J. F. Clauser, M. A. Horne, A. Shimony, and R. A. Holt,
+%Proposed Experiment to Test Local Hidden-Variable Theories,
+\href{https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.23.880}{Phys. Rev. Lett. \textbf{23}, 880 (1969)}.
+
+
+\bibitem{SM}
+See \href{https://journals.aps.org/} {Supplementary Material} for detailed proofs.
+
+
+\bibitem{Pal10}
+ K. F. P\'al and T. V\'ertesi,
+ %Maximal violation of the I3322 inequality using infinite dimensional quantum systems.
+ \href{https://dx.doi.org/10.1103/PhysRevA.82.022116}{\eprint{Phys. Rev. A 82, 022116 (2010)}.}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+
+
+
+
+\bibitem{cabello16}
+ A.~Cabello,
+ %Simple method for experimentally testing any form of quantum contextuality,
+ \href{https://journals.aps.org/pra/pdf/10.1103/PhysRevA.93.032102}
+ {Phys.~Rev.~A, \textbf{93}, 032102 (2016).}
+
+\bibitem{Lovasz}
+L. Lov\'asz,
+%¡°On the Shannon capacity of a graph,¡±
+IEEE Trans. Inf. Theory \textbf{25}, 1 (1979).
+
+\bibitem{yxiao17}
+ Y.~Xiao, \emph{et al.},
+ %Z.-P.~Xu, Q.~Li, J.-S.~Xu, K.~Sun, J.-M.~Cui, Z.-Q.~Zhou, H.-Y.~Su, A.~Cabello, J.-L.~Chen, C.-F.~Li, and G.-C.~Guo,
+ %Experimental observation of quantum state-independent contextuality under no-signaling conditions,
+ \href{https://www.osapublishing.org/oe/abstract.cfm?uri=oe-26-1-32}
+ {Opt.~Express \textbf{26} 38 (2018).}
+
+ \bibitem{qli18}
+ Q.~Li, et al.,
+ \href{https://www.osapublishing.org/optica/abstract.cfm?uri=optica-6-1-67&origin=search}
+ %Experimental simulation of anti-parity-time symmetric Lorentz dynamics,
+ {Optica \textbf{6}, 67 (2019).}
+
+% \bibitem{bolduc13}
+% E.~Bolduc, N.~Bent, E.~Santamato, E.~Karimi, and R.~W.~Boyd,
+% Exact solution to simultaneous intensity and phase encryption with a single phase-only hologram,
+% Opt.~Lett. \textbf{38}, 3546 (2013).
+
+ \bibitem{allen92}
+ L.~Allen, M.~W.~Beijersbergen, R.~J.~C.~Spreeuw, and J.~P.~Woerdman,
+ \href{https://journals.aps.org/pra/pdf/10.1103/PhysRevA.45.8185}
+ %Orbital angular momentum of light and the transformation of Laguerre-Gaussian laser modes,
+ {Phys.~Rev.~A \textbf{45}, 8185 (1992).}
+
+ %\bibitem{mair01}
+ %A.~Mair, A.~Vaziri, G.~Weihs, and A.~Zeilinger,
+ %Entanglement of the orbital angular momentum states of photons,
+ %Nature \textbf{412} 313 (2001).
+
+
+
+
+\end{thebibliography}
+
+
+\end{document}
+
+
+
